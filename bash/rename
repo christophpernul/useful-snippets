@@ -1,0 +1,17 @@
+#!/bin/bash
+#### iterates through file structure and renames them
+#for d in */
+#do
+#echo "In folder "$d
+
+for f in `ls $d*.JPG`
+do
+#renaming all files with .JPG to .jpg and deleting the .JPG files
+n=`echo $f | cut -d'.' -f1`.jpg
+convert $f $n
+rm $f
+#find -name "*\;*" -type f | rename "s/[öäüß ]//g"
+#mv "$f" "${f%.jpeg}.jpg"
+done
+#done
+

@@ -1,0 +1,15 @@
+#!/bin/bash
+#### Renames all files and resizes them to specific width
+echo "Renaming all .JPG files to .jpg and resizing them to a maximum size of "$1
+#for d in */
+#do
+#echo "In folder "$d
+#mkdir $d"converted"
+for f in `ls $d*.[jJ][pP][gG]`
+do
+#echo $f
+convert $f -resize $1x$1 ${f,,}
+#rm $f
+#done
+done
+
